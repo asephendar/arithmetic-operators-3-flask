@@ -51,5 +51,14 @@ def Modulus():
     modulus = a % b
     return jsonify({"results" : modulus})
 
+@app.route('/pembagianlantai', methods=['POST'])
+def FloorDivision():
+    a = request.json['a']
+    b = request.json['b']
+    
+    pembagianlantai = a // b
+    return jsonify({"results" : pembagianlantai})
+
+
 if __name__ == '__main__':
     app.run(debug=True)
