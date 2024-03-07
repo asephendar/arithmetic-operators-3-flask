@@ -19,5 +19,13 @@ def Subtraction():
     hasil = a - b
     return jsonify({"results" : hasil})
 
+@app.route('/kali', methods=['POST'])
+def Multiplication():
+    a = request.json['a']
+    b = request.json['b']
+    
+    perkalian = a * b
+    return jsonify({"results" : perkalian})
+
 if __name__ == '__main__':
     app.run(debug=True)
