@@ -35,5 +35,13 @@ def Division():
     pembagian = a / b
     return jsonify({"results" : pembagian})
 
+@app.route('/pangkat', methods=['POST'])
+def Exponentiation():
+    a = request.json['a']
+    b = request.json['b']
+    
+    pangkat = a ** b
+    return jsonify({"results" : pangkat})
+
 if __name__ == '__main__':
     app.run(debug=True)
