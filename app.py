@@ -43,5 +43,13 @@ def Exponentiation():
     pangkat = a ** b
     return jsonify({"results" : pangkat})
 
+@app.route('/modulus', methods=['POST'])
+def Modulus():
+    a = request.json['a']
+    b = request.json['b']
+    
+    modulus = a % b
+    return jsonify({"results" : modulus})
+
 if __name__ == '__main__':
     app.run(debug=True)
