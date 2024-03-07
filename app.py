@@ -27,5 +27,13 @@ def Multiplication():
     perkalian = a * b
     return jsonify({"results" : perkalian})
 
+@app.route('/bagi', methods=['POST'])
+def Division():
+    a = request.json['a']
+    b = request.json['b']
+    
+    pembagian = a / b
+    return jsonify({"results" : pembagian})
+
 if __name__ == '__main__':
     app.run(debug=True)
